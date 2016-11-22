@@ -1,0 +1,9 @@
+{% extends "views/base.twig" %}
+
+{% block content %}
+	{#<h2>Posts</h2>#}
+	{#<p>{{qux}}</p>#}
+	{% for post in posts %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+{% endblock %}

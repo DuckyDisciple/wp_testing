@@ -1,0 +1,12 @@
+{# Page Template: 'page.twig' #}
+
+{% extends 'views/base.twig' %}
+
+{% block content %}
+
+    <div class="single-content">
+        <h1 style="color:blue;">{{post.title}}</h1>
+        <p>{{post.get_content}}</p>
+    </div>
+
+{% endblock %}

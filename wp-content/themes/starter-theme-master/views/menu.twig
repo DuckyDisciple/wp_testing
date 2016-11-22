@@ -1,0 +1,28 @@
+{# Menu Template: 'menu.twig' #}
+
+{% if menu %}
+
+    <nav>
+        <ul class="nav-menu">
+            {% for item in menu.get_items %}
+                <li class="nav-menu-item {{ item_classes | join (' ') }}">
+                    <a class="nav-menu-link" href="{{ item.get_link }}">{{ item.title }}</a>
+                    
+                    {% if item.get_children %}
+                        <ul class="nav-sub">
+                            {% for child in item.get_children %}
+                            
+                                <li class="nav-menu-sub-item {{item_classes | join (' ') }}">
+                                    <a class="nav-menu-sub-link" href="{{ child.get_link }}">{{ child.title }}</a>
+                                </li>
+                            
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+{% endif %}

@@ -1,0 +1,26 @@
+{# Base Template: base.twig #}
+
+{% block html_head_content %}
+
+    {% include 'views/header.twig' %}
+    
+{% endblock %}
+
+    <body class={{body_class}}>
+        
+        {% include 'views/menu.twig' %}
+        
+        <div class="wrapper">
+            {% block content %}
+            
+                <p>Sorry, no content found.</p>
+            
+            {% endblock %}
+            
+        </div>
+        
+        {% include 'views/footer.twig' %}
+        
+    </body>
+    
+</html>
